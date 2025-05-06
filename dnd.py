@@ -23,6 +23,20 @@ print(f"[1] {Fore.WHITE}Vanguard: Health: {Fore.GREEN}25{Style.RESET_ALL}  Stren
       f"[3] {Fore.WHITE}Thief: Health: {Fore.GREEN}15{Style.RESET_ALL}  Strength: {Fore.RED}10{Style.RESET_ALL}  Defense: {Fore.BLUE}10{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}30{Style.RESET_ALL}\n"
       f"[4] {Fore.WHITE}Slave: Health: {Fore.GREEN}10{Style.RESET_ALL}  Strength: {Fore.RED}5{Style.RESET_ALL}  Defense: {Fore.BLUE}5{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}5{Style.RESET_ALL}")
 
+
+def choices(choice_list):
+    while True:
+        try:
+            choice = int(input("What you wanna do? ")) + 1
+            choice_list[choice] 
+        except IndexError:
+            continue
+
+
+        return choice
+    
+print(choices(["yes","no"]))
+
 class_choice = int(input("Choose a bitch:" ))
 clear()
 
@@ -34,6 +48,9 @@ elif class_choice == 3:
     player = Player("Thief", 15, 10, 10, 30)
 elif class_choice == 4:
     player = Player("Slave", 10, 5, 5, 5)
+else:
+    print("[!]DUMBASS YOU GOT TO SAY 1 OR 2, HOW CLUELESS CAN YOU GET?[!]")
+
 
 print(f"You chose the {player.name}!\n")
 clear(2)
@@ -42,8 +59,7 @@ def print_stats():
     print(f"Health: {player.health}\nStrength: {player.strength}\nDefense: {player.defense}\nDexterity: {player.dexterity}")
 
 
-def choices():
-    choice = int(input("[1]\n,[2]\n,[3]\n[4]"))
+
 
 
 while True:    
