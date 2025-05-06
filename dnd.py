@@ -35,7 +35,7 @@ def choices(choice_list):
 
         return choice
     
-print(choices(["yes","no"]))
+print(choices([]))
 
 class_choice = int(input("Choose a bitch:" ))
 clear()
