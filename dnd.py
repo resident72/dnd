@@ -18,39 +18,37 @@ class Player:
     def __str__(self):
         return f"{self.name}, {self.strength}, {self.health}, {self.defense}, {self.dexterity}"
 
-print(f"[1] {Fore.WHITE}Vanguard: Health: {Fore.GREEN}25{Style.RESET_ALL}  Strength: {Fore.RED}15{Style.RESET_ALL}  Defense: {Fore.BLUE}25{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}10{Style.RESET_ALL}\n"
-      f"[2] {Fore.WHITE}Warrior: Health: {Fore.GREEN}20{Style.RESET_ALL}  Strength: {Fore.RED}20{Style.RESET_ALL}  Defense: {Fore.BLUE}15{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}15{Style.RESET_ALL}\n"
-      f"[3] {Fore.WHITE}Thief: Health: {Fore.GREEN}15{Style.RESET_ALL}  Strength: {Fore.RED}10{Style.RESET_ALL}  Defense: {Fore.BLUE}10{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}30{Style.RESET_ALL}\n"
-      f"[4] {Fore.WHITE}Slave: Health: {Fore.GREEN}10{Style.RESET_ALL}  Strength: {Fore.RED}5{Style.RESET_ALL}  Defense: {Fore.BLUE}5{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}5{Style.RESET_ALL}")
 
 
 def choices(choice_list):
+    for element in choice_list: print(element)
     while True:
         try:
-            choice = int(input("What you wanna do? ")) + 1
-            choice_list[choice] 
+            choice = int(input("What you wanna do? ")) - 1
+            choice_list[choice]
         except IndexError:
             continue
-
-
         return choice
-    
-print(choices([]))
+     
+choice = choices([f"[1] {Fore.WHITE}Vanguard: Health: {Fore.GREEN}25{Style.RESET_ALL}  Strength: {Fore.RED}15{Style.RESET_ALL}  Defense: {Fore.BLUE}25{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}10{Style.RESET_ALL}",
+                  f"[2] {Fore.WHITE}Warrior: Health: {Fore.GREEN}20{Style.RESET_ALL}  Strength: {Fore.RED}20{Style.RESET_ALL}  Defense: {Fore.BLUE}15{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}15{Style.RESET_ALL}",
+                  f"[3] {Fore.WHITE}Thief: Health: {Fore.GREEN}15{Style.RESET_ALL}  Strength: {Fore.RED}10{Style.RESET_ALL}  Defense: {Fore.BLUE}10{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}30{Style.RESET_ALL}",
+                  f"[4] {Fore.WHITE}Slave: Health: {Fore.GREEN}10{Style.RESET_ALL}  Strength: {Fore.RED}5{Style.RESET_ALL}  Defense: {Fore.BLUE}5{Style.RESET_ALL}  Dexterity: {Fore.YELLOW}5{Style.RESET_ALL}"])
 
-class_choice = int(input("Choose a bitch:" ))
-clear()
+print("Ich scheiss 🤢 auf FSST, ich  ❤❤❤❤ DIC")
 
-if class_choice == 1:
+print(choice)
+
+if choice == 0:
     player = Player("Vanguard", 25, 15, 25, 10)
-elif class_choice == 2:
+elif choice == 1:
     player = Player("Warrior", 20, 20, 15, 15)
-elif class_choice == 3:
+elif choice == 2:
     player = Player("Thief", 15, 10, 10, 30)
-elif class_choice == 4:
+elif choice == 3:
     player = Player("Slave", 10, 5, 5, 5)
 else:
     print("[!]DUMBASS YOU GOT TO SAY 1 OR 2, HOW CLUELESS CAN YOU GET?[!]")
-
 
 print(f"You chose the {player.name}!\n")
 clear(2)
